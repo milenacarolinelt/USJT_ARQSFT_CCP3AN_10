@@ -1,16 +1,15 @@
 package br.com.usjt.exercicio8.item1;
 
-public class NoticiarioAssina implements ConsomeNoticia{
-	private final Noticiario observer;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
-	public NoticiarioAssina(Noticiario observer) {
-		this.observer = observer;
-	}
+public class NoticiarioAssina extends Noticiario implements ConsomeNoticia{
 
 	@Override
 	public void notificaNoticia(String textoNoticia, int dia, int mes, String topico) {
-		// TODO Auto-generated method stub
-		
+		NumberFormat format = new DecimalFormat("#00");;
+		System.out.println("Noticia: " + textoNoticia);
+		System.out.println("Data: " + format.format(dia) + "/" + format.format(mes));
+		System.out.println("Tópico: " + topico);
 	}
-
 }
